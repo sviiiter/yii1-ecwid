@@ -1,0 +1,9 @@
+# Codeception Test Suite Configuration
+# for unit (internal) tests.
+class_name: UnitTester
+modules:
+    enabled:
+        - Yii1:
+            appPath: 'tests/application-test.php'
+            url: ''
+

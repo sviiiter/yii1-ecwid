@@ -1,0 +1,15 @@
+<?php
+
+return [
+    'components' => [
+        'ecwid' => [
+            'class' => 'application.components.ecwid.EcwidRestConnector',
+            'storeId' => '123',
+            'host' => 'https://app.ecwid.com',
+            'version' => 'v3',
+            'tokens' => [
+                'private' => 'dsfsdf'
+            ]
+        ]
+    ]
+];

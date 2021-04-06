@@ -1,0 +1,10 @@
+{
+    "name": "sviter/ecwidc",
+    "description": "Example component for Ecwid store REST API",
+    "type": "project",
+    "require": {
+        "yiisoft/yii": "^1.1",
+        "codeception/codeception": "2.3.7",
+        "codeception/yii-bridge": "dev-master"
+    }
+}

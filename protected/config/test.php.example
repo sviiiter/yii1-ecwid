@@ -1,0 +1,13 @@
+<?php
+	return [
+        'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
+        'components' => [
+                'ecwid' => [
+                    'class' => 'application.tests.unit.components.ecwid.DummyConnector'
+                ]
+        ],
+        'import' => [
+            'application.components.ecwid.*',
+            'application.components.*'
+        ]
+	];
