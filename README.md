@@ -23,3 +23,13 @@ public function actionEcwidSyncProducts() {
    }
 }
 ```
+
+Start:
+
+
+```
+cd protected
+composer install
+php vendor/bin/codecept build
+php yiic.php export ecwidSyncProducts
+```
