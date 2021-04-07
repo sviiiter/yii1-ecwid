@@ -1,7 +1,7 @@
-# yii1-ecwid
+## yii1-ecwid
 upload product to Ecwid server
 
-Usage:
+# Usage:
 ```php
 Yii::import('application.components.ecwid.*'); // whether it wasn't imported yet with config
 
@@ -24,7 +24,7 @@ public function actionEcwidSyncProducts() {
 }
 ```
 
-Start:
+# Start:
 
 
 ```
