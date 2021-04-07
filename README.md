@@ -1,5 +1,7 @@
 ## yii1-ecwid
-upload product to Ecwid server
+Upload product to Ecwid server
+
+For more info see [Ecwid guide](https://api-docs.ecwid.com/reference/rest-api)
 
 # Usage:
 ```php
