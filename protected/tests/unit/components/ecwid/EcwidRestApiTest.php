@@ -11,6 +11,26 @@
     }
 
 
+    /**
+     * Check RESTful type class correct parse json
+     */
+    public function testEcwidProductType() {
+      /** @var \PHPUnit\Framework\TestCase|DbTestCase|EcwidRestApiTest $this */
+      $response = (array)json_decode($this->_fixtures['EcwidProductType_success']);
+      $obj = new EcwidProductType($response['items'][0]);
+      $this->assertTrue((int)$obj->geId() > 0);
+      $this->assertTrue((int)$obj->getRelatedId() > 0);
+
+      $response = (array)json_decode($this->_fixtures['EcwidProductType_fault']);
+      $obj = new EcwidProductType($response['items'][1]);
+      $this->assertNull($obj->geId());
+      $this->assertNull($obj->getRelatedId());
+    }
+
+
+    /**
+     * @depends testEcwidProductType
+     */
     public function testIterator() {
       $iterator = new EcwidRealLoader();
 
@@ -53,6 +73,7 @@
      *
      * @throws CDbException
      * @throws Exception
+     * @depends testEcwidProductType
      */
     public function testSyncProductPrice() {
       $loader = new EcwidRealLoader();
@@ -77,19 +98,5 @@
       } catch (Exception $e) {
         // success
       }
-    }
-
-
-    public function testEcwidProductType() {
-      /** @var \PHPUnit\Framework\TestCase|DbTestCase|EcwidRestApiTest $this */
-      $response = (array)json_decode($this->_fixtures['EcwidProductType_success']);
-      $obj = new EcwidProductType($response['items'][0]);
-      $this->assertTrue((int)$obj->geId() > 0);
-      $this->assertTrue((int)$obj->getRelatedId() > 0);
-
-      $response = (array)json_decode($this->_fixtures['EcwidProductType_fault']);
-      $obj = new EcwidProductType($response['items'][1]);
-      $this->assertNull($obj->geId());
-      $this->assertNull($obj->getRelatedId());
     }
   }
