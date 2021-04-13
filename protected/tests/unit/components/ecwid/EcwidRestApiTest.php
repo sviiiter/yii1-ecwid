@@ -1,6 +1,6 @@
 <?php
 
-  Yii::import('application.components.ecwid.interfaces', true);
+  Yii::import('application.components.ecwid.types', true);
   Yii::import('application.tests.unit.components.ecwid.*');
 
   class EcwidRestApiTest extends DbTestCase

@@ -1,5 +1,5 @@
 <?php
-  Yii::import('application.components.ecwid.interfaces', true);
+  Yii::import('application.components.ecwid.types', true);
 
   /**
    * Class EcwidLoader is the layer between local DB's data and rest connector. Save or select the data.
