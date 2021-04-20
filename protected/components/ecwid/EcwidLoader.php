@@ -37,13 +37,13 @@
     public function next() {
       $connector = $this->getConnector();
       $this->_offset += $connector::OFFSET_STEP;
-      $this->data = static::_parseResponseIterationResponse($this->getConnector()->getProducts($this->_offset));
+      $this->data = static::parseIterationResponse($this->getConnector()->getProducts($this->_offset));
     }
 
 
     public function rewind() {
       $this->_offset = 0;
-      $this->data = static::_parseResponseIterationResponse($this->getConnector()->getProducts($this->_offset));
+      $this->data = static::parseIterationResponse($this->getConnector()->getProducts($this->_offset));
     }
 
 
@@ -53,7 +53,7 @@
      * @return EcwidProductType[]
      * @throws Exception
      */
-    private static function _parseResponseIterationResponse($response) {
+    private static function parseIterationResponse($response) {
       $aResponse = (array)json_decode($response);
 
       if (!isset($aResponse['items'])) {
